@@ -1,0 +1,81 @@
+.panel {
+  flex: 0 0 50%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding-right: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.forgotLink {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.forgotLink:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.submitButton {
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--color-accent), #1f6050);
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(43, 122, 98, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+}
+
+.switchText {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.switchLink {
+  background: none;
+  border: none;
+  color: var(--color-accent-bright);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,10 @@
+.page {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.status {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
