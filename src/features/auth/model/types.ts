@@ -14,17 +14,13 @@ export interface SignUpFormData {
 }
 
 export interface LoginPanelProps {
-  isActive: boolean;
   onLogin: (data: LoginFormData) => void;
-  message: Message;
   onForgotPassword: () => void;
   onSwitchToSignUp: () => void;
 }
 
 export interface SignUpPanelProps {
-  isActive: boolean;
   onSignUp: (data: SignUpFormData) => void;
-  message: Message;
   onSwitchToLogin: () => void;
 }
 

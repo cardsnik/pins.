@@ -28,6 +28,20 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] {
+  --color-bg: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-surface-raised: #eceef1;
+  --color-border: rgba(13, 17, 23, 0.1);
+  --color-text: #0d1117;
+  --color-text-muted: rgba(13, 17, 23, 0.58);
+  --color-text-faint: rgba(13, 17, 23, 0.35);
+  --color-accent: #2b7a62;
+  --color-accent-bright: #1f6050;
+  --color-danger: #c94465;
 }
 
 @media (prefers-reduced-motion: reduce) {

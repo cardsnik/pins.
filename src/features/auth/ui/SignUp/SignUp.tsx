@@ -1,9 +1,10 @@
 import { useState } from "react";
 import type { SignUpPanelProps, SignUpFormData } from "../../model/types";
-import MessageBlock from "../MessageBlock/MessageBlock";
+import { useTranslation } from "../../../../shared/lib/i18n/LanguageContext";
 import styles from "./SignUp.module.css";
 
-function SignUp({ isActive, onSignUp, message, onSwitchToLogin }: SignUpPanelProps) {
+function SignUp({ onSignUp, onSwitchToLogin }: SignUpPanelProps) {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<SignUpFormData>({
     name: "",
     email: "",
@@ -21,11 +22,10 @@ function SignUp({ isActive, onSignUp, message, onSwitchToLogin }: SignUpPanelPro
 
   return (
     <div className={styles.panel}>
-      {isActive && <MessageBlock message={message}></MessageBlock>}
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Имя"
+          placeholder={t.auth.namePlaceholder}
           className={styles.input}
           value={formData.name}
           onChange={(e) => handleChange("name", e.target.value)}
@@ -33,7 +33,7 @@ function SignUp({ isActive, onSignUp, message, onSwitchToLogin }: SignUpPanelPro
         />
         <input
           type="email"
-          placeholder="Email"
+          placeholder={t.auth.emailPlaceholder}
           className={styles.input}
           value={formData.email}
           onChange={(e) => handleChange("email", e.target.value)}
@@ -41,20 +41,20 @@ function SignUp({ isActive, onSignUp, message, onSwitchToLogin }: SignUpPanelPro
         />
         <input
           type="password"
-          placeholder="Пароль"
+          placeholder={t.auth.passwordPlaceholder}
           className={styles.input}
           value={formData.password}
           onChange={(e) => handleChange("password", e.target.value)}
           required
         />
         <button type="submit" className={styles.submitButton}>
-          Зарегистрироваться
+          {t.auth.submitSignUp}
         </button>
       </form>
       <p className={styles.switchText}>
-        Уже есть аккаунт?{" "}
+        {t.auth.haveAccount}{" "}
         <button type="button" className={styles.switchLink} onClick={onSwitchToLogin}>
-          Войти
+          {t.auth.loginLink}
         </button>
       </p>
     </div>

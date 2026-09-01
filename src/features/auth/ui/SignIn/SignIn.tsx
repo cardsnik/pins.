@@ -1,15 +1,10 @@
 import { useState } from "react";
 import type { LoginPanelProps, LoginFormData } from "../../model/types";
-import MessageBlock from "../MessageBlock/MessageBlock";
+import { useTranslation } from "../../../../shared/lib/i18n/LanguageContext";
 import styles from "./SignIn.module.css";
 
-function SignIn({
-  isActive,
-  onLogin,
-  message,
-  onForgotPassword,
-  onSwitchToSignUp,
-}: LoginPanelProps) {
+function SignIn({ onLogin, onForgotPassword, onSwitchToSignUp }: LoginPanelProps) {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
@@ -26,11 +21,10 @@ function SignIn({
 
   return (
     <div className={styles.panel}>
-      {isActive && <MessageBlock message={message}></MessageBlock>}
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="email"
-          placeholder="Email"
+          placeholder={t.auth.emailPlaceholder}
           className={styles.input}
           value={formData.email}
           onChange={(e) => handleChange("email", e.target.value)}
@@ -38,23 +32,23 @@ function SignIn({
         />
         <input
           type="password"
-          placeholder="Пароль"
+          placeholder={t.auth.passwordPlaceholder}
           className={styles.input}
           value={formData.password}
           onChange={(e) => handleChange("password", e.target.value)}
           required
         />
         <button type="button" className={styles.forgotLink} onClick={onForgotPassword}>
-          Забыли пароль?
+          {t.auth.forgotPassword}
         </button>
         <button type="submit" className={styles.submitButton}>
-          Войти
+          {t.auth.submitLogin}
         </button>
       </form>
       <p className={styles.switchText}>
-        Нет аккаунта?{" "}
+        {t.auth.noAccount}{" "}
         <button type="button" className={styles.switchLink} onClick={onSwitchToSignUp}>
-          Зарегистрироваться
+          {t.auth.signUpLink}
         </button>
       </p>
     </div>
