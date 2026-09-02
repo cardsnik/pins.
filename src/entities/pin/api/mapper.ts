@@ -1,6 +1,7 @@
 import type { Pin } from "../model/types";
 import type { UnsplashPhoto } from "./unsplashTypes";
 
+// в lib ложи
 export function mapUnsplashPhoto(photo: UnsplashPhoto): Pin {
   return {
     id: photo.id,

@@ -63,6 +63,7 @@ function Header() {
           {t.nav.favorites}
         </NavLink>
       </nav>
+      {/* лучше настроить отдельный компонент кнопку для иконок */}
       <button
         type="button"
         className={styles.iconButton}
@@ -70,6 +71,7 @@ function Header() {
         aria-label={theme === "dark" ? t.theme.toLight : t.theme.toDark}
         title={theme === "dark" ? t.theme.toLight : t.theme.toDark}
       >
+        {/* используй svg icons */}
         {theme === "dark" ? "☀️" : "🌙"}
       </button>
       <button

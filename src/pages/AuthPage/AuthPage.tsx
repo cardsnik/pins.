@@ -54,7 +54,7 @@ function AuthPage() {
   const handleForgotPassword = () => {
     dispatch(clearMessage());
   };
-
+  // ты должен это спрятать в компонент SinInForm или типо того
   return (
     <div className={styles.page}>
       <div className={styles.authCard} ref={cardRef}>

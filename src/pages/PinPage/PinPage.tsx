@@ -11,6 +11,7 @@ import styles from "./PinPage.module.css";
 
 type Status = "loading" | "succeeded" | "failed";
 
+// Можно разбить на компоненты
 function PinPage() {
   const { id } = useParams<{ id: string }>();
   const [pin, setPin] = useState<Pin | null>(null);

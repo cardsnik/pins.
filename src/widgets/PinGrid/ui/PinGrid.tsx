@@ -16,6 +16,7 @@ interface PinGridProps {
   emptyMessage?: string;
 }
 
+// зря обернул это в ui папку. они избыточна в этом случае
 function PinGrid({ items, isLoading, emptyMessage }: PinGridProps) {
   const gridRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ function PinGrid({ items, isLoading, emptyMessage }: PinGridProps) {
       return;
     }
 
+    // хотелось бы настройку анимации убрать из компонента куда-нить
     const ctx = gsap.context(() => {
       const cards = gridRef.current!.querySelectorAll(`.${styles.cardWrapper}`);
       gsap.fromTo(
